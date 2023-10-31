@@ -17,7 +17,7 @@ import java.time.LocalTime;
 @NamedNativeQuery(name = RegistrationTransaction.GET_LATEST_STATUS_BY_PROXY_TYPE_AND_VALUE,
         query = "SELECT * FROM PPAR_REGISTRATION_TRANSACTION " +
                 "WHERE PROXY_TYPE=:proxyType AND PROXY_VALUE=:proxyValue " +
-                "ORDER BY TO_TIMESTAMP(CONCAT(TRANSACTION_DATE, TRANSACTION_TIME),'YYYYMMDDHH24MISS') DESC" +
+                "ORDER BY TO_TIMESTAMP(CONCAT(TRANSACTION_DATE, TRANSACTION_TIME),'YYYYMMDDHH24MISS') DESC " +
                 "LIMIT 1",
         resultClass = RegistrationTransaction.class)
 

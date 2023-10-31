@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import javax.persistence.Query;
 import java.util.List;
 
+import static com.github.audomsak.poc.promptpay.reconcile.persistence.RegistrationTransaction.GET_LATEST_STATUS_BY_PROXY_TYPE_AND_VALUE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
@@ -62,5 +63,16 @@ class RegistrationTransactionTest {
         assertThat(results.get(2).transactionDate).hasToString("2023-12-03");
         assertThat(results.get(3).transactionDate).hasToString("2023-12-02");
         assertThat(results.get(4).transactionDate).hasToString("2023-12-01");
+    }
+
+    @Test
+    void shouldReturnLatestRecordOfProxyTypeAndProxyValueProvided() {
+        List<RegistrationTransaction> results = RegistrationTransaction.getEntityManager()
+                .createNamedQuery(GET_LATEST_STATUS_BY_PROXY_TYPE_AND_VALUE, RegistrationTransaction.class)
+                .setParameter("proxyType", "MSISDN")
+                .setParameter("proxyValue", "0876543210")
+                .getResultList();
+
+        assertThat(results).hasSize(1);
     }
 }
