@@ -14,17 +14,17 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@NamedNativeQuery(name = RegistrationTransaction.GET_LATEST_STATUS_BY_PROXY_TYPE_AND_VALUE,
+@NamedNativeQuery(name = RegistrationTransactionEntity.FIND_LATEST_BY_PROXY_TYPE_AND_VALUE,
         query = "SELECT * FROM PPAR_REGISTRATION_TRANSACTION " +
                 "WHERE PROXY_TYPE=:proxyType AND PROXY_VALUE=:proxyValue " +
                 "ORDER BY TO_TIMESTAMP(CONCAT(TRANSACTION_DATE, TRANSACTION_TIME),'YYYYMMDDHH24MISS') DESC " +
                 "LIMIT 1",
-        resultClass = RegistrationTransaction.class)
+        resultClass = RegistrationTransactionEntity.class)
 
-@Entity(name = "RegistrationTransaction")
+@Entity(name = "RegistrationTransactionEntity")
 @Table(name = "PPAR_REGISTRATION_TRANSACTION")
-public class RegistrationTransaction extends PanacheEntityBase {
-    public static final String GET_LATEST_STATUS_BY_PROXY_TYPE_AND_VALUE = "getLatestStatusByProxyTypeAndValue";
+public class RegistrationTransactionEntity extends PanacheEntityBase {
+    public static final String FIND_LATEST_BY_PROXY_TYPE_AND_VALUE = "findLatestByProxyTypeAndValue";
 
     @Id
     @Column(name = "REFERENCE_NO", length = 14, unique = true, nullable = false)
