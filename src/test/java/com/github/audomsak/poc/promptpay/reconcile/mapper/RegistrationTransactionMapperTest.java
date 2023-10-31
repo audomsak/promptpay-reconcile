@@ -40,5 +40,7 @@ class RegistrationTransactionMapperTest {
         assertThat(dto.getTransactionType()).isEqualTo(rte.transactionType);
         assertThat(dto.getTransactionDate()).isEqualTo(rte.transactionDate);
         assertThat(dto.getTransactionTime()).isEqualTo(rte.transactionTime);
+
+        rte.delete(); // clean up
     }
 }
