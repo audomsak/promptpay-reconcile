@@ -4,7 +4,6 @@ import com.github.audomsak.poc.promptpay.reconcile.aggregator.InputAggregator;
 import com.github.audomsak.poc.promptpay.reconcile.processor.InputProcessor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
-import org.apache.camel.builder.endpoint.dsl.SftpEndpointBuilderFactory;
 import org.apache.camel.builder.endpoint.dsl.SftpEndpointBuilderFactory.SftpEndpointConsumerBuilder;
 import org.apache.camel.builder.endpoint.dsl.SftpEndpointBuilderFactory.SftpEndpointProducerBuilder;
 import org.apache.camel.component.file.GenericFileExist;
@@ -122,6 +121,7 @@ public class PromptpayReconcileRouteBuilder extends EndpointRouteBuilder {
                         .log(DEBUG, log, "Body object: ${body}")
                 .end();
 
+        //TODO: Code implementation from here on.
 
         // Processing steps:
         // 1. Consumed input from Direct component
