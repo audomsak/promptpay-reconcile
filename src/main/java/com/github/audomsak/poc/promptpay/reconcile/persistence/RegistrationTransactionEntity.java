@@ -4,12 +4,12 @@ package com.github.audomsak.poc.promptpay.reconcile.persistence;
 import com.github.audomsak.poc.promptpay.reconcile.persistence.converter.TransactionDateConverter;
 import com.github.audomsak.poc.promptpay.reconcile.persistence.converter.TransactionTimeConverter;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import javax.persistence.Column;
-import javax.persistence.Convert;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedNativeQuery;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

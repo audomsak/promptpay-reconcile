@@ -5,8 +5,8 @@ import com.github.audomsak.poc.promptpay.reconcile.persistence.RegistrationTrans
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
-import javax.inject.Inject;
-import javax.transaction.Transactional;
+import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalTime;
 

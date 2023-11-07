@@ -3,8 +3,8 @@ package com.github.audomsak.poc.promptpay.reconcile.persistence;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.Query;
-import javax.transaction.Transactional;
+import jakarta.persistence.Query;
+import jakarta.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
